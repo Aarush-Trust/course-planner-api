@@ -119,3 +119,19 @@ uvicorn app.main:app --reload
 Then open:
 - Swagger UI: http://127.0.0.1:8000/docs  
 - OpenAPI JSON: http://127.0.0.1:8000/openapi.json
+
+## Frontend (optional UI)
+
+This repo also includes a simple React frontend in the `Frontend/` folder that consumes the API:
+
+- Lists courses and sections.
+- Checks for time conflicts between selected sections.
+- Creates named schedules.
+- Renders a basic weekly timetable view of a schedule.
+
+To run it:
+cd Frontend
+npm install
+npm start
+
+By default it expects the API to be running at `http://127.0.0.1:8000` as described above.
