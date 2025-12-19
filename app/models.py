@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 from typing import List, Optional
 from datetime import date, time
+from sqlmodel import SQLModel, Field
 
 #To define shape of incoming data
 class CourseCreate(BaseModel):

@@ -8,3 +8,5 @@ __pycache__/
 # Editor settings
 .vscode/
 .idea/
+
+frontend/node_modules/

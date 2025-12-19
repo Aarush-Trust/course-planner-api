@@ -3,11 +3,25 @@ from app.routes.courses import router as courses_router #Shortens the course rou
 from app.routes.sections import router as sections_router #Shortens the section router name
 from app.routes.term import router as term_router #Shortens the term router name
 from app.routes.schedules import router as schedules_router #Shortens the schedules router name
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI ( #To create the web application
     title = "Course Planner API",
     description = "API for Waterloo-style course planning",
     version = "0.1.0"
+)
+
+origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 app.include_router(courses_router) #Plugs in the router to the FastAPI
